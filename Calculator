@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Risk Profile Calculator for Indian Mutual Fund Investors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comprehensive Risk Profile Calculator for Indian Mutual Fund Investors</h1>
+        <form id="riskProfileForm">
+            <h2>Section 1: Personal Information</h2>
+            <div class="question">
+                <label for="age">1. What is your age?</label>
+                <select id="age" required>
+                    <option value="5">Under 25</option>
+                    <option value="4">25-35</option>
+                    <option value="3">36-45</option>
+                    <option value="2">46-55</option>
+                    <option value="1">56-65</option>
+                    <option value="0">Over 65</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="employment">2. What is your employment status?</label>
+                <select id="employment" required>
+                    <option value="4">Salaried employee in a stable job</option>
+                    <option value="3">Self-employed or business owner</option>
+                    <option value="2">Freelancer or contract worker</option>
+                    <option value="1">Retired or unemployed</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="income">3. What is your annual income (in lakhs)?</label>
+                <select id="income" required>
+                    <option value="1">Less than 5</option>
+                    <option value="2">5-10</option>
+                    <option value="3">10-20</option>
+                    <option value="4">20-50</option>
+                    <option value="5">More than 50</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="dependents">4. How many dependents do you have?</label>
+                <select id="dependents" required>
+                    <option value="4">None</option>
+                    <option value="3">1-2</option>
+                    <option value="2">3-4</option>
+                    <option value="1">More than 4</option>
+                </select>
+            </div>
+
+            <h2>Section 2: Financial Situation</h2>
+            <div class="question">
+                <label for="savings">5. What percentage of your monthly income can you comfortably save/invest?</label>
+                <select id="savings" required>
+                    <option value="1">Less than 10%</option>
+                    <option value="2">10-20%</option>
+                    <option value="3">21-30%</option>
+                    <option value="4">31-40%</option>
+                    <option value="5">More than 40%</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="emergency">6. Do you have an emergency fund that can cover your expenses?</label>
+                <select id="emergency" required>
+                    <option value="0">No emergency fund</option>
+                    <option value="1">1-2 months of expenses</option>
+                    <option value="2">3-6 months of expenses</option>
+                    <option value="3">6-12 months of expenses</option>
+                    <option value="4">More than 12 months of expenses</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="debt">7. What is your current debt-to-income ratio?</label>
+                <select id="debt" required>
+                    <option value="0">More than 50%</option>
+                    <option value="1">30-50%</option>
+                    <option value="2">20-30%</option>
+                    <option value="3">10-20%</option>
+                    <option value="4">Less than 10%</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="property">8. Do you own any real estate property?</label>
+                <select id="property" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes, one residential property</option>
+                    <option value="2">Yes, multiple properties including investment properties</option>
+                </select>
+            </div>
+
+            <h2>Section 3: Investment Knowledge and Experience</h2>
+            <div class="question">
+                <label for="knowledge">9. How would you rate your investment knowledge?</label>
+                <select id="knowledge" required>
+                    <option value="1">Novice - little to no knowledge</option>
+                    <option value="2">Basic - understand fundamental concepts</option>
+                    <option value="3">Intermediate - good understanding of various investment options</option>
+                    <option value="4">Advanced - in-depth knowledge of financial markets and instruments</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="experience">10. How many years of experience do you have with mutual fund investments?</label>
+                <select id="experience" required>
+                    <option value="0">No experience</option>
+                    <option value="1">Less than 2 years</option>
+                    <option value="2">2-5 years</option>
+                    <option value="3">5-10 years</option>
+                    <option value="4">More than 10 years</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="investments">11. Have you invested in any of the following? (Select the highest applicable)</label>
+                <select id="investments" required>
+                    <option value="1">Fixed deposits or savings accounts only</option>
+                    <option value="2">Debt mutual funds</option>
+                    <option value="3">Equity mutual funds</option>
+                    <option value="4">Stocks or ETFs</option>
+                    <option value="5">Derivatives or alternative investments</option>
+                </select>
+            </div>
+
+            <h2>Section 4: Risk Tolerance</h2>
+            <div class="question">
+                <label for="reaction">12. How would you react if your investment value dropped by 20% in a month?</label>
+                <select id="reaction" required>
+                    <option value="0">Sell everything immediately</option>
+                    <option value="1">Sell some investments</option>
+                    <option value="2">Hold and wait for recovery</option>
+                    <option value="3">Buy more at lower prices</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="goal">13. What is your primary investment goal?</label>
+                <select id="goal" required>
+                    <option value="1">Capital preservation</option>
+                    <option value="2">Regular income</option>
+                    <option value="3">Balanced growth and income</option>
+                    <option value="4">Aggressive growth</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="horizon">14. How long do you plan to invest?</label>
+                <select id="horizon" required>
+                    <option value="1">Less than 1 year</option>
+                    <option value="2">1-3 years</option>
+                    <option value="3">3-7 years</option>
+                    <option value="4">More than 7 years</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="philosophy">15. Which statement best describes your investment philosophy?</label>
+                <select id="philosophy" required>
+                    <option value="1">I prefer guaranteed returns, even if they are low</option>
+                    <option value="2">I can accept small fluctuations for slightly higher returns</option>
+                    <option value="3">I'm willing to take moderate risks for better long-term growth</option>
+                    <option value="4">I can tolerate significant volatility for potentially high returns</option>
+                </select>
+            </div>
+
+            <button type="submit">Calculate Risk Profile</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('riskProfileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formElements = this.elements;
+            let totalScore = 0;
+
+            for (let i = 0; i < formElements.length; i++) {
+                if (formElements[i].tagName === 'SELECT') {
+                    totalScore += parseInt(formElements[i].value);
+                }
+            }
+
+            let riskProfile, allocation;
+
+            if (totalScore <= 20) {
+                riskProfile = "Ultra Conservative";
+                allocation = "90% Debt funds (60% Short-term, 30% Long-term), 10% Equity funds (Large-cap only)";
+            } else if (totalScore <= 30) {
+                riskProfile = "Conservative";
+                allocation = "80% Debt funds (50% Short-term, 30% Long-term), 20% Equity funds (15% Large-cap, 5% Multi-cap)";
+            } else if (totalScore <= 40) {
+                riskProfile = "Moderately Conservative";
+                allocation = "70% Debt funds (40% Short-term, 30% Long-term), 30% Equity funds (20% Large-cap, 10% Multi-cap)";
+            } else if (totalScore <= 50) {
+                riskProfile = "Moderate";
+                allocation = "50% Debt funds (30% Short-term, 20% Long-term), 50% Equity funds (30% Large-cap, 15% Multi-cap, 5% Mid-cap)";
+            } else if (totalScore <= 60) {
+                riskProfile = "Moderately Aggressive";
+                allocation = "30% Debt funds (20% Short-term, 10% Long-term), 70% Equity funds (40% Large-cap, 20% Multi-cap, 10% Mid-cap)";
+            } else if (totalScore <= 70) {
+                riskProfile = "Aggressive";
+                allocation = "20% Debt funds (Short-term), 80% Equity funds (40% Large-cap, 25% Multi-cap, 10% Mid-cap, 5% Small-cap)";
+            } else {
+                riskProfile = "Very Aggressive";
+                allocation = "10% Debt funds (Short-term), 90% Equity funds (35% Large-cap, 30% Multi-cap, 15% Mid-cap, 10% Small-cap)";
+            }
+
+            document.getElementById('result').innerHTML = `
+                <h2>Your Risk Profile: ${riskProfile}</h2>
+                <p>Suggested Asset Allocation: ${allocation}</p>
+                <p>Total Score: ${totalScore}</p>
+                <p>Note: This is a simplified calculation. Please consult with a financial advisor for personalized advice.</p>
+            `;
+        });
+    </script>
+</body>
+</html>
